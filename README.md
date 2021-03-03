@@ -1,5 +1,5 @@
 # vue-simple-page
-
+A simple page build with Vue.
 ## Project setup
 ```
 npm install
