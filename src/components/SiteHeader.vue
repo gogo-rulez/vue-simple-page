@@ -1,19 +1,21 @@
 <template>
     <header class="header">
 
-        <h1 class="header__title">VueSimplePage</h1>
+        <div class="header__inner_wrap">
+            <h1 class="header__title">VueSimplePage</h1>
 
-        <a
-            role="button"
-            class="header__nav_toggle"
-            :class="{'is-active': navVisible}"
-            @click="navVisible = !navVisible"></a>
+            <a
+                role="button"
+                class="header__nav_toggle"
+                :class="{'is-active': navVisible}"
+                @click="navVisible = !navVisible"></a>
 
-        <transition name="slide-fade">
-            <navigation
-                v-if="navVisible"
-                :desk-navigation="desktopNavTriggered" />
-        </transition>
+            <transition name="slide-fade">
+                <navigation
+                    v-if="navVisible"
+                    :desk-navigation="desktopNavTriggered" />
+            </transition>
+        </div>
 
     </header>
 </template>
