@@ -3,18 +3,9 @@ $h: header;
 .#{$h} {
     position: fixed;
     top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
     width: 100%;
-    padding: 0 0 0 20px;
+    z-index: 100;
     background-color: #fff;
-
-    @include min-screen($desktop) {
-        height: 100px;
-    }
 
     &::after {
         content: " ";
@@ -29,6 +20,22 @@ $h: header;
 
         @include min-screen($desktop) {
             z-index: 0;
+        }
+    }
+
+    &__inner_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        width: 100%;
+        padding: 0 0 0 20px;
+        max-width: 1120px;
+        margin: 0 auto;
+
+        @include min-screen($desktop) {
+            height: 100px;
+            padding: 0 20px;
         }
     }
 

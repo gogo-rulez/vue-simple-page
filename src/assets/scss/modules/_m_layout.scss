@@ -12,21 +12,92 @@ body {
 }
 
 .page {
+    display: flex;
+    flex-direction: column;
     padding: 20px 15px;
 
     @include min-screen($desktop) {
-        padding: 52px 20px;
+        padding: 50px 20px;
         max-width: 1120px;
         margin: 0 auto;
     }
 
+    &.home {
+        padding: 0 15px 20px;
+
+        @include min-screen($desktop) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 50px 20px;
+        }
+    }
+
+    &__figure {
+        display: flex;
+        align-items: center;
+        position: relative;
+        order: 1;
+        box-sizing: border-box;
+        height: auto;
+        max-height: 350px;
+        margin: 0 -15px;
+        overflow: hidden;
+
+        @include min-screen($desktop) {
+            order: 2;
+            flex: 0 0 50%;
+            height: auto;
+            margin: 0 0 0 50px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__intro_wrap {
+        order: 2;
+        margin: 20px 0 0;
+
+        @include min-screen($tablet) {
+            margin: 30px 0 0;
+        }
+
+        @include min-screen($desktop) {
+            order: 1;
+            margin: 0;
+        }
+    }
+
     &__title {
+        font: $fontBold;
         font-size: rem(20);
         line-height: rem(24);
 
-        @include min-screen($desktop) {
+        @include min-screen($tablet) {
             font-size: rem(24);
             line-height: rem(28);
         }
+
+        @include min-screen($desktop) {
+            font-size: rem(28);
+            line-height: rem(32);
+        }
+    }
+
+    &__description {
+        margin: 20px 0 0;
+        font-size: rem(16);
+        line-height: rem(22);
+
+        @include min-screen($tablet) {
+            margin: 25px 0 0;
+            font-size: rem(18);
+            line-height: rem(24);
+        }
+
     }
 }

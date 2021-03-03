@@ -51,6 +51,7 @@ $n: navigation;
         @include min-screen($desktop) {
             flex-direction: row;
             justify-content: center;
+            padding: 0;
         }
     }
 

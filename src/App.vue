@@ -2,6 +2,7 @@
     <div id="app">
 
         <site-header />
+        <router-view />
 
     </div>
 </template>
