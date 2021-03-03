@@ -1,0 +1,86 @@
+$f: form;
+
+.#{$f} {
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0;
+
+    @include min-screen($tablet) {
+        margin: 25px 0 0;
+    }
+
+    @include min-screen($desktop) {
+        width: 50%;
+    }
+
+    &__row {
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0 0 20px;
+
+        &:not(:first-child) {
+            margin: 20px 0 0;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        font: $fontMedium;
+        font-size: rem(16);
+    }
+
+    &__input {
+        height: 40px;
+        padding: 0 10px;
+        border: 1px solid $grey02;
+        border-radius: 3px;
+        outline: none !important;
+    }
+
+    &__input_error {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        height: 20px;
+        padding: 0 10px;
+        font: $fontMedium;
+        font-size: rem(12);
+        color: #ff0000;
+    }
+
+    &__textarea {
+        height: 120px;
+        padding: 10px;
+        border: 1px solid $grey02;
+        border-radius: 3px;
+        outline: none !important;
+    }
+
+    &__submit_btn {
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        background-color: $grey02;
+        color: $white01;
+        text-transform: uppercase;
+        outline: none !important;
+
+        &:hover {
+            background-color: darken($grey02, 20%);
+        }
+    }
+
+    &__success_message {
+        font: $fontBold;
+        font-size: rem(16);
+        color: $grey02;
+        text-transform: uppercase;
+    }
+
+}
